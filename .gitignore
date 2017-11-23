@@ -1,0 +1,13 @@
+/vendor
+/node_modules
+npm-debug*
+composer.phar
+composer.lock
+.DS_Store
+
+/conf
+/.idea
+/.settings
+.buildpath
+
+.env

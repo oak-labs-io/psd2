@@ -1,0 +1,25 @@
+{
+    "name": "oaklabs/psd2",
+    "description": "API client for banks supporting psd2 APIs.",
+    "keywords": ["banking", "psd2"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "OakLabs GmbH",
+            "email": "development@oak-labs.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "OakLabs\\PSD2\\": "src/PSD2"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
