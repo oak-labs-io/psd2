@@ -19,11 +19,6 @@ interface BankGatewayInterface
     public function setAuthorization(AuthorizationInterface $authorization);
 
     /**
-     * @return $this
-     */
-    public function retrieveAuthotizationCode();
-
-    /**
      * @param string|AccessToken $accessToken
      * @return $this
      */
