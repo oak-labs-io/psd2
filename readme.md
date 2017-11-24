@@ -1,5 +1,10 @@
 # Psd2
 
+[![License](https://poser.pugx.org/oaklabs/psd2/license)](https://packagist.org/packages/oaklabs/psd2)
+[![Latest Stable Version](https://poser.pugx.org/oaklabs/psd2/v/stable)](https://packagist.org/packages/oaklabs/psd2)
+[![Latest Unstable Version](https://poser.pugx.org/oaklabs/psd2/v/unstable)](https://packagist.org/packages/oaklabs/psd2)
+[![Build Status](https://travis-ci.org/oak-labs-io/psd2.svg)](https://travis-ci.org/oak-labs-io/psd2)
+
 ## Introduction
 
 > Psd2 is a API client for Banks supporting PSD2 APIs with Oauth2 authentication.
