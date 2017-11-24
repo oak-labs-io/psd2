@@ -74,7 +74,7 @@ class FidorGateway extends AbstractBankGateway implements BankGatewayInterface
                 'iban' => $account['iban'],
                 'id' => $account['id'],
             ],
-                $account['customers']);
+                $account['customers'] ?? null);
         },
             $accountDetails['data']);
     }
