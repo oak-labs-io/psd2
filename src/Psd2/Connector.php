@@ -24,13 +24,14 @@ class Connector
     }
 
     /**
-     * @param BankGatewayInterface $bankGateway
+     * @param string $bankName
      * @param bool $useSandbox
      *
      * @return BankGatewayInterface
      */
-    public function getBankGateway(BankGatewayInterface $bankGateway, bool $useSandbox = true): BankGatewayInterface
+    public function getBankGateway(string $bankName, bool $useSandbox = true): BankGatewayInterface
     {
+        $bankGateway = $this->instantiateGateway($bankName);
         $bankGateway->setAuthorization($this->authorization);
 
         if ($useSandbox === false) {
@@ -40,5 +41,20 @@ class Connector
         }
 
         return $bankGateway;
+    }
+
+    /**
+     * @param string $bankName
+     * @return BankGatewayInterface
+     */
+    protected function instantiateGateway(string $bankName): BankGatewayInterface
+    {
+        switch (strtolower($bankName)) {
+            case 'fidor':
+                return new \OakLabs\Psd2\Gateway\FidorGateway();
+                break;
+            default:
+                throw new UnsupportedBankException($bankName . ' is not supported yet');
+        }
     }
 }

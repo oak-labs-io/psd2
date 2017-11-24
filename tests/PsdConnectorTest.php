@@ -21,12 +21,29 @@ class PsdConnectorTest extends TestCase
             'client_secret' => 'secret'
         ]);
 
-        $className = 'OakLabs\\Psd2\\Gateway\\' . ucfirst($bankName) . 'Gateway';
-
         $connector = (new Connector($authorization));
-        $gateway = $connector->getBankGateway(new $className, '1');
+        $gateway = $connector->getBankGateway($bankName, true);
 
         $this->assertInstanceOf(Connector::class, $connector);
         $this->assertInstanceOf(FidorGateway::class, $gateway);
+    }
+
+    /**
+     * @expectedException OakLabs\Psd2\UnsupportedBankException
+     */
+    public function testFidorInstantiationUnsupportedBank()
+    {
+        $bankName = 'sparkasse';
+
+        $authorization = new Authorization([
+            'code' => '1234567890',
+            'state' => 'state',
+            'redirect_uri' => 'http://somecallback',
+            'client_id' => 'app_id',
+            'client_secret' => 'secret'
+        ]);
+
+        $connector = (new Connector($authorization));
+        $connector->getBankGateway($bankName, true);
     }
 }
