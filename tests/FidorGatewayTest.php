@@ -111,12 +111,10 @@ class FidorGatewayTest extends TestCase
         $transactionInput = [
             'external_uid' => '1234567890',
             'account_id' => '12345',
-            'transaction_uid' => 'abcd510',
             'amount' => 10,
             'remote_iban' => 'DE0000000000000000',
             'bic' => 'ABCDEFGH',
-            'subject' => 'My Description',
-            'created_at' => '2017-11-23 12:00:00'
+            'subject' => 'My Description'
         ];
 
         $transaction = [
