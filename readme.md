@@ -43,10 +43,10 @@ $authorization = new \OakLabs\Psd2\Authorization\Authorization([
     'client_secret' => 'the client secret of the bank API'
 ]);
 
-// Let's now instanciate the Bank Gateway through the Connector
+// Let's now instantiate the Bank Gateway through the Connector
 $tokens = (new Connector($authorization))
     ->getBankGateway(
-        new \OakLabs\Psd2\Gateway\FidorGateway(),
+        'fidor',
         $useSandbox
     )
     ->retrieveTokens()
@@ -78,7 +78,7 @@ $authorization = new Authorization([
 
 $accounts = (new Connector($authorization))
     ->getBankGateway(
-        new \OakLabs\Psd2\Gateway\FidorGateway(),
+        'fidor',
         $useSandbox
     )
     ->setAccessToken($accessToken)
@@ -118,7 +118,7 @@ $authorization = new Authorization([
 
 $transactions = (new Connector($authorization))
     ->getBankGateway(
-        new \OakLabs\Psd2\Gateway\FidorGateway(),
+        'fidor',
         $useSandbox
     )
     ->setAccessToken($accessToken)
@@ -165,7 +165,7 @@ $data = [
 
 $transaction = (new Connector($authorization))
     ->getBankGateway(
-        new \OakLabs\Psd2\Gateway\FidorGateway(),
+        'fidor',
         $useSandbox
     )
     ->setAccessToken($accessToken)
