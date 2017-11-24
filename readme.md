@@ -10,28 +10,28 @@ PHP 7.1+ is required.
 
 Psd2 can be installed through Composer, just include `"oaklabs/psd2": "^1.0"` to your composer.json and run `composer update` or `composer install`.
 
-## Supporter Banks
+## Supported Banks
 
  - [Fidor Bank](https://www.fidor.de/) ([API Documentation](https://api-docs.fidor.de))
 
 ## Usage
 
-> Examples will be show using the FidorGateway, but all Bank Gateways use the same methods.
+> Examples will be described using the Fidor Bank Gateway, but all Bank Gateways use the same methods.
 
-Once we get the state token from the Bank OAuth2 screen, we must handle the callback to retrieve the Access Token and therefore being able to use the Bank API.
+Once we use fills in his/her own Bank details in the Bank OAuth2 screen, we must handle the callback to with the `state` and `code` variables in order to retrieve the Access Token and therefore being able to use the Bank API.
 
 The `Connector` class is the class that will take care of instantiate the Bank Gateway.
 Creating a Connector instance is the first step to use Psd2.
 
 ### Sandbox
 
-All Bank Gateways can be used in a sandbox mode, which will hit the Banks sandbox API endpoint to allow testing.
+All Bank Gateways can be used in a sandbox mode, which will make the Banks hit the sandbox API endpoints to allow testing.
 
 ### Retrieving the Access Token
 
 ```php
-// Let's Suppose we saved the state token in a $state variable,
-// the random code in $code and boolean $useSandbox variable
+// Let's suppose we saved the state token in a $state variable,
+// the random code in $code and we have a boolean $useSandbox variable
 
 // First of all we need to create an Authorization instance
 
